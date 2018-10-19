@@ -1,0 +1,23 @@
+service: email-lambda
+provider:
+  name: aws
+  runtime: nodejs8.10
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          method: get
+  mailJson:
+    handler: handler.mailJson
+    events:
+      - http:
+          path: /mailJson
+          method: get
+  AllEvents:
+    handler: handler.AllEvents
+    events:
+      - http:
+          path: /events/all
+          method: get
